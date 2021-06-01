@@ -14,11 +14,9 @@ if [[ ${1} ]]; then
 else
   INTERVAL=${DEFAULT_INTERVAL}
 fi
-#make the dir
-mkdir -p /opt/DCIM
 echo "Started Camerd at $(date +%s)" > /dev/kmsg
 while true
 do
-  raspistill -o /opt/DCIM/IMG_$(date +%s).jpg
+  raspistill -o /opt/camerad/DCIM/IMG_$(date +%s).jpg
   sleep ${INTERVAL}
 done
