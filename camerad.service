@@ -2,7 +2,7 @@
 Description=AutomaticCamera
 
 [Service]
-ExecStart=/opt/DCIM/camerad.sh
+ExecStart=/opt/camerad/bin/camerad.sh
 
 [Install]
 WantedBy=multi-user.target
