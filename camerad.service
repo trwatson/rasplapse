@@ -1,0 +1,8 @@
+[Unit]
+Description=AutomaticCamera
+
+[Service]
+ExecStart=/opt/DCIM/camerad.sh
+
+[Install]
+WantedBy=multi-user.target
