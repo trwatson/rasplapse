@@ -1,0 +1,26 @@
+#!/bin/bash
+#/etc/init.d/camerad
+### BEGIN INIT INFO
+# Provides:          AutmaticCamera
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Takes pictures...
+### END INIT INFO
+
+case $1 in
+start)
+  bash /opt/DCIM/camerad.sh &
+  exit 0
+  ;;
+stop)
+  pkill -f "camerad" -s9
+  exit 0
+  ;;
+status)
+  $count=$(pgrep camerad | wc -l)
+  echo "$count processes running"
+  exit 0
+  ;;
+esac
